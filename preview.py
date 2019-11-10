@@ -1,7 +1,7 @@
 import os
 import json
 from pelican import signals
-from unfurl import PreviewGenerator
+from indieweb_utils.unfurl import PreviewGenerator
 
 
 pg = PreviewGenerator()
