@@ -12,17 +12,17 @@ from shutil import rmtree
 from setuptools import find_packages, setup, Command
 
 # Package meta-data.
-NAME = 'pelican-preview'
+NAME = 'pelican-unfurl'
 DESCRIPTION = 'A pelican plugin to read, generate and cache URL previews'
-URL = 'https://github.com/drivet/pelian-preview'
+URL = 'https://github.com/drivet/pelican-unfurl'
 EMAIL = 'desmond.rivet@gmail.com'
 AUTHOR = 'Desmond Rivet'
 REQUIRES_PYTHON = '>=3.6.0'
-VERSION = '0.1.0'
+VERSION = '0.0.1'
 
 # What packages are required for this module to be executed?
 REQUIRED = [
-    'pelican', 'micawber'
+    'pelican', 'indieweb-utils'
 ]
 
 # What packages are optional?
