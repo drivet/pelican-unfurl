@@ -51,8 +51,7 @@ def get_preview_url(article):
 
 
 def get_folder(article):
-    url = article.url
-    return url.rsplit(url, 1)[1]
+    return article.url.rsplit('/', 1)[0]
 
 
 def load_file(filename):
