@@ -19,7 +19,7 @@ def attach_preview(generator):
         preview_file = os.path.join(preview_folder, article.slug)
         if not os.path.isfile(preview_file):
             article.preview = generate_preview(article)
-            if cache_previews and article.preview:
+            if cache_previews and article.preview is not None:
                 os.makedirs(preview_folder, exist_ok=True)
                 save_file(preview_file, article.preview)
         else:
@@ -27,10 +27,14 @@ def attach_preview(generator):
 
 
 def generate_preview(article):
-    preview_url = get_preview_url(article)
-    if preview_url:
-        return pg.preview(preview_url)
-    else:
+    try:
+        preview_url = get_preview_url(article)
+        if preview_url:
+            return pg.preview(preview_url)
+        else:
+            return None
+    except Exception as e:
+        print("Exception thrown while unfurling " + str(e))
         return None
 
 
